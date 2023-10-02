@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('img_path');
             $table->integer('all_points');
             $table->integer('donated_points')->default(0);
-            $table->foreignId('package_id')->constrained('package_type');
+            $table->foreignId('package_id')->constrained('package_types');
             $table->timestamps();
         });
     }
