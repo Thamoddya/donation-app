@@ -19,6 +19,7 @@ class UserLoginController extends Controller
         $role = $user->role;
         return response()->json([
             "attempt" => true,
+            "username" => $user['username'],
             "access_token" => $user->createToken('api_token')->plainTextToken,
             'token_type'=>'Bearer',
             'role'=>$role['name'],
